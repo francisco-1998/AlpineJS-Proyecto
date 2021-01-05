@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de eventos</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+</head>
+<body>
+
+    <div x-data="mainMouse()">
+        <button @click="onClick(event)" 
+                x-on:mouseover="onMouseOver(event)" 
+                x-on:mouseout="onMouseOut(event)"
+                style="padding: 200px;">
+            Botón de tocar
+        </button>
+    </div>
+
+    <div x-data="mainInputs()">
+        <br>
+        <p x-text="texto"></p>
+        <input type="text" x-on:keydown.enter="onKeyPressEnter(event)">
+        <br>
+        <input type="text" x-on:input="onInput(event)">
+    </div>
+    
+    <script src="js/app3.js"></script>
+</body>
+</html>
