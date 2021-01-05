@@ -10,6 +10,18 @@
    <h2>AlpineJs</h2>
     <div x-data="{nombre: 'Francisco'}" x-init="nombre = 'Francisco Marin'">
         <p x-text="nombre"></p>
+        <br>
+    </div>
+
+    <div x-data="secondComp()">
+        <p x-text="nombre"></p>
+        <p x-text="email"></p>
+        <br>
+    </div>
+
+
+    <div x-data="otherComp()" x-init="start()">
+        <p x-text="name"></p>
     </div>
 
 
