@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+    <style>
+        .active{
+            color:darkgoldenrod;
+        }
+    </style>
+</head>
+<body>
+    
+    <div x-data="main()">
+        <p x-text="iniciar"></p>
+        <button x-on:click="iniciar = !iniciar">Cambiar valor forma 1</button>
+
+        <button @click="iniciar = !iniciar">Cambiar valor forma 2</button>
+        <h1 x-show="iniciar">Yo soy el mago de este pagina</h1>
+
+        <br><br>
+        <p x-bind:class="{'active': !iniciar}">Párrafo con estilo</p>
+        <button x-bind:disabled="iniciar" @click="mensaje()">Activo, yo hablo</button>
+    </div>
+
+
+    <br>
+
+    <script src="app2.js"></script>
+</body>
+</html>
