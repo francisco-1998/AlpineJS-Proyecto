@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Model</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+</head>
+<body>
+    
+    <div x-data="formsMain()">
+        <p x-text="name"></p>
+        <input type="text" x-model="name">
+        <input type="text" x-model.debounce.750="name">
+        <button x-on:click="onClick()">Ver texto en consola</button>
+
+    </div>
+
+    <hr>
+
+    <div x-data="formulario()">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" x-model="persona.nombre">
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellidos</label>
+            <input type="text" x-model="persona.apellido">
+        </div>
+        <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="text" x-model="persona.edad">
+        </div>
+        <button x-on:click="sendForm()">Go</button>
+
+        <hr>
+        <p>Data del Formulario</p>
+        <p x-text="persona.nombre"></p>
+        <p x-text="persona.apellido"></p>
+        <p x-text="persona.edad"></p>
+    </div>
+
+
+    <script src="js/app4.js"></script>
+</body>
+</html>
