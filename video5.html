@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 5 X-IF</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+</head>
+<body>
+    <div x-data="main()">
+        <button x-on:click="open = !open">Muestra/Oculta</button>
+        <template x-if="open">
+            <div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio placeat debitis saepe, quae voluptate iure minus. Neque officia aperiam adipisci nihil accusantium ratione fugiat exercitationem accusamus ut harum, mollitia dolor?</p>
+            </div>
+        </template>
+
+
+        <div class="producto">
+            <h2 x-text="product.nombre"></h2>
+            <p x-text="product.precio"></p>
+            <template x-if="product.activo">
+                <div>
+                    <p>Disponible</p>
+                    <button>Comprar</button>
+                </div>
+            </template>
+            <template x-if="!product.activo">
+                <div>
+                    <p>No Disponible</p>
+                    <button disabled>Comprar</button>
+                </div>
+            </template>
+        </div>
+
+    </div>
+
+    <script src="./js/app5.js"></script>
+</body>
+</html>
